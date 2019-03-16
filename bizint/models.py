@@ -2,6 +2,7 @@ import json
 
 from django.db import models
 from django.utils import timezone
+from django.urls import reverse
 
 
 class Action(models.Model):
@@ -26,7 +27,6 @@ class Action(models.Model):
         return json.dumps(action_dict)
 
     def get_absolute_url(self):
-        from django.urls import reverse
         return reverse('bizint:info', args=[str(self.id)])
 
     def __str__(self):
