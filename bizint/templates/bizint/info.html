@@ -8,6 +8,7 @@
 {% if action %}
 <h1>{{ action.action_name }}</h1>
 <p>{{ action.get_current_count }}</p>
+<a href="{% url 'bizint:add' action.id%}">+1</a>
 {% endif %}
 </body>
 </html>
