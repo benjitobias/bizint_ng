@@ -3,9 +3,10 @@ import json
 from django.db import models
 from django.utils import timezone
 
+
 class Action(models.Model):
     action_name = models.CharField(max_length=20)
-    creation_date = models.DateTimeField(default=timezone.now) # Not to call function, server will call on run
+    creation_date = models.DateTimeField(default=timezone.now)  # Not to call function, server will call on run
 
     def get_current_count(self):
         current_count = self.instance_set.count()
@@ -23,6 +24,10 @@ class Action(models.Model):
             }
         }
         return json.dumps(action_dict)
+
+    def get_absolute_url(self):
+        from django.urls import reverse
+        return reverse('bizint:info', args=[str(self.id)])
 
     def __str__(self):
         return self.action_name
