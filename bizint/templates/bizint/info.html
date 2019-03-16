@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ action.action_name|default:"Doesn\'t Exist!" }}</title>
+</head>
+<body>
+{% if action %}
+<h1>{{ action.action_name }}</h1>
+<p>{{ action.get_current_count }}</p>
+{% endif %}
+</body>
+</html>

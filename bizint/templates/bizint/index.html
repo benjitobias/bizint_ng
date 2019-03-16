@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bizint</title>
+</head>
+<body>
+{% if action_list %}
+<ul>
+    {% for action in action_list %}
+    <li><a href="{% url 'bizint:info' action.id %}">{{ action.action_name }}</a> - {{ action.get_current_count }}</li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No action available</p>
+{% endif %}
+</body>
+</html>
