@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'testserver']
 # Application definition
 
 INSTALLED_APPS = [
+    'guardian',
     'rest_framework',
     'bizint.apps.BizintConfig',
     'django.contrib.admin',
