@@ -1,4 +1,6 @@
 from django.urls import path
+from django.contrib.auth import views as auth_views
+
 
 from . import views
 
@@ -12,4 +14,5 @@ urlpatterns = [
     path('<int:action_id>/add', views.add, name='add'),
     # ex: /api/actions
     path('api/actions', views.api_actions, name='api_actions'),
+    path('login/', auth_views.LoginView.as_view(template_name='bizint/login.html'), name='login')
 ]

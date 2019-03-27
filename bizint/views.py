@@ -37,6 +37,8 @@ def api_actions(request):
     }
     return HttpResponse(x)
 
+def login(request):
+    return HttpResponse("Login!")
 
 def api_action(request, action_id):
     pass
